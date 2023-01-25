@@ -1,6 +1,6 @@
 <div class="flex flex-col container mx-auto md:py-10 py-5 max-w-screen-2xl">
     <!-- ASSIGNMENTS -->
-    <h1 class="font-medium">Assignments</h1>
+    <h1 class="font-medium">Reports</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 sm:auto-rows-fr sm:auto-cols-fr">
         <ng-container *ngFor="let assignment of assignmentList$ | async">
             <app-card-assignment [assignment]="assignment"></app-card-assignment>
@@ -10,25 +10,25 @@
     <mat-divider class="my-10"></mat-divider>
 
     <!-- TABLE -->
-    <h1 class="font-medium">List Of Students</h1>
+    <h1 class="font-medium">List of Cities</h1>
     <div class="p-0 outline outline-1 outline-gray-200 bg-white rounded-[12px]">
         <table mat-table [dataSource]="dataSource" matSort class="outline-1 w-full rounded-[12px]">
 
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name" class="text-base text-black/80 rounded-[12px]">
-                    Name 
+                    City 
                 </th>
                 <td mat-cell *matCellDef="let student" class="text-black/80"> {{student.studentName}} </td>
             </ng-container>
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by ID" class="text-base text-black/80">
-                    ID
+                    Identity
                 </th>
                 <td mat-cell *matCellDef="let student" class="text-black/80"> {{student.studentID}} </td>
             </ng-container>
             <ng-container matColumnDef="gradems">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by gradems" class="text-base text-black/80">
-                    Mediasite
+                    Dynamism
                 </th>
                 <td mat-cell *matCellDef="let student" class="text-black/80">
                     <div class="flex flex-row items-center gap-2">
@@ -39,7 +39,7 @@
             </ng-container>
             <ng-container matColumnDef="gradeff">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by gradeff" class="text-base text-black/80">
-                    Feedback Fruits
+                    Strategy
                 </th>
                 <td mat-cell *matCellDef="let student" class="text-black/80">
                     <div class="flex flex-row items-center gap-2">
@@ -50,7 +50,18 @@
             </ng-container>
             <ng-container matColumnDef="gradeaa">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by gradeaa" class="text-base text-black/80">
-                    Academic Attendance
+                    Services
+                </th>
+                <td mat-cell *matCellDef="let student" class="text-black/80">
+                    <div class="flex flex-row items-center gap-2">
+                        <mat-icon class="{{setFlagAttendance(student.attendancePercentage).colorFont}}">{{setFlagAttendance(student.attendancePercentage).icon}}</mat-icon>
+                        {{student.attendancePercentage}}%
+                    </div>
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="gradestp">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by gradeaa" class="text-base text-black/80">
+                    Cost of Life
                 </th>
                 <td mat-cell *matCellDef="let student" class="text-black/80">
                     <div class="flex flex-row items-center gap-2">

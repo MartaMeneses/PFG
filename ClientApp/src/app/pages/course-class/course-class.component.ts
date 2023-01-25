@@ -50,7 +50,7 @@ export class CourseClassComponent implements OnInit {
   gradeAA: number = 10;
 
   // Table vars
-  displayedColumns: string[] = ['name', 'id', 'gradems', 'gradeff', 'gradeaa'];
+  displayedColumns: string[] = ['name', 'id', 'gradems', 'gradeff', 'gradeaa', 'gradestp'];
   dataSource !: any;
   dataSource$ !: any;
   @ViewChild(MatPaginator) paginator !: MatPaginator;

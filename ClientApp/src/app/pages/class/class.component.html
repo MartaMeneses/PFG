@@ -5,11 +5,5 @@
                 <app-course-class [course]="course"></app-course-class>
             </mat-tab>
         </ng-container>
-
-
-        <ng-container *ngFor="let courseClass of classCourseLiset$ | async">
-            <h1>Hiii {{ courseClass.className }}</h1>
-        </ng-container>
-
     </mat-tab-group>
 </div>        
